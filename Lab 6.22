@@ -1,0 +1,33 @@
+# taking coefficients of first equation 1 as string input.
+# splitting and storing coefficents in a list equation1
+equation1 = input().split()
+# taking coefficients of first equation 2 as string input.
+# splitting and storing coefficents in a list equation2
+equation2 = input().split()
+
+# converting each coeffients of equation 1 to the integer and storing in a1,b1,c1
+a1 = int(equation1[0])
+b1 = int(equation1[1])
+c1 = int(equation1[2])
+# converting each coeffients of equation 2 to the integer and storing in a2,b2,c2
+a2 = int(equation2[0])
+b2 = int(equation2[1])
+c2 = int(equation2[2])
+
+# using brute force approach to find the solution
+flag = 0  # flag will be 0  if no solution exit
+# checking for each pair of x and y in equations
+for x in range(-10, 11): 
+    for y in range(-10, 11):
+        if (a1*x + b1*y == c1) and (a2*x + b2*y == c2):
+            flag=1  # flag will be 1 if solution found
+            res_x = x  # storing x in res_x
+            res_y = y  # storing y in res_y
+            break
+
+# if solution found print the solution
+if flag == 1:
+    print(f"x = {res_x} , y = {res_y}") # using f-string
+# else if there is no solution
+else:
+    print("There is no solution")

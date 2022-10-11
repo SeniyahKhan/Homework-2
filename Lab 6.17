@@ -1,0 +1,35 @@
+# Get input for insecure password
+insecureInputPwrdStr = input()
+
+# New secure password string
+secureOptPwrStr = ""
+
+# Loop over the insecure password
+for insecurePWEachLtr in insecureInputPwrdStr:
+    # if the letter of insecure password is "i"
+    if insecurePWEachLtr == "i":
+        # append the "!" to the secure password string
+        secureOptPwrStr += "!"
+
+    elif insecurePWEachLtr=='a':
+        secureOptPwrStr += "@"
+
+    elif  insecurePWEachLtr == "m":
+        secureOptPwrStr += "M"
+
+    elif  insecurePWEachLtr == "B":
+        secureOptPwrStr += "8"
+
+    elif  insecurePWEachLtr == "o":
+        secureOptPwrStr += "."
+
+    # If none of above letters are in the insecure password
+    else:
+        # append the same letter to the secure password
+        secureOptPwrStr += insecurePWEachLtr
+
+# append "q*s" at the end
+secureOptPwrStr = secureOptPwrStr + "q*s"
+
+# print the secure password
+print(secureOptPwrStr)

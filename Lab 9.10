@@ -1,0 +1,25 @@
+import csv
+
+filename = 'words.csv'
+
+# open the csv file
+with open(filename, 'r') as file:
+    # call the csv.reader() function
+    reader = csv.reader(file)
+
+    # create a dictionary to store
+    wordCounts = {}
+
+    for row in reader:
+        # for each word in row
+        for word in row:
+            # if word is in dictionary, increment it
+            if word in wordCounts:
+                wordCounts[word] += 1
+            # if word is in dictionary, add it
+            else:
+                wordCounts[word] = 1
+
+    # print each word and its frequency
+    for key in wordCounts:
+        print(f'{key} : {wordCounts[key]}')

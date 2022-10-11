@@ -1,0 +1,24 @@
+# import sys
+# sys.stdin = open('inputDates.txt', 'r')
+# sys.stdout = open('parsedDates.txt', 'w')
+
+# make dictionary for month numbers
+month = {'january':1, "february":2, "march":3, "april":4, "may":5, "june":6,
+		"july":7, "august":8, "september":9, "october":10, "november":11, "december":12}
+
+# take input 
+date = input()
+# loop until input is not -1
+while(date != "-1"):
+	date = date.split()
+	# if date has three fields
+	if(len(date) == 3):
+		# check if month is valid and day is integer only
+		if(date[0].lower() in month and date[1][:-1].isdigit()):
+			m = str(month[date[0].lower()])
+			d = date[1][:-1]
+			# print in format
+			print(m + "/" + d + "/" + date[2])
+
+	# take input again
+	date = input()
